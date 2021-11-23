@@ -1,11 +1,11 @@
 const Footer = () => {
-    const retornarNombre = () => {
+    const renderName = () => {
         return 'Soy un Nombre'
     }
     return (
         <footer>
             <p>Holitas en el mar</p>
-            {retornarNombre()}
+            {renderName()}
         </footer>
     )
 
