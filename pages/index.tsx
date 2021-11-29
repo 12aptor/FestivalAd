@@ -5,6 +5,11 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 const Home: NextPage = () => {
+
+
+  const loader = () => {
+    return "https://picsum.photos/200/300"
+  }
   return (
     <div>
       <Head>
@@ -17,7 +22,19 @@ const Home: NextPage = () => {
 
       <main>
         <div className="home" id="home">
-
+          <div className="flex">
+            <div>
+              <h1>Promociona tu marca y consigue <span style={{ fontWeight: '700' }}>más ventas</span></h1>
+              <p>Anuncia en la red de portales de entretenimiento en español con mayor audiencia de la región.</p>
+              <b>Regístrate aquí y empieza a anunciar</b>
+              <div style={{ display: 'flex', width: '100%', marginTop: '5px' }}>
+                <input type="email" placeholder="correo electrónico" /> <button>Comienza ahora</button>
+              </div>
+            </div>
+            <div>
+              <img src="https://picsum.photos/500/300" />
+            </div>
+          </div>
         </div>
         <div className="comoFunciona" id="comoFunciona">
 

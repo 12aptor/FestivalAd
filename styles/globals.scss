@@ -20,7 +20,9 @@ $primary-color-light: rgba($primary-color, 0.2);
 $shadow-color: #e1e5ee;
 $text-color: black;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 .container {
     max-width: 1200px;
@@ -149,10 +151,42 @@ header {
 }
 
 main {
+    font-family: "Poppins", sans-serif;
     .home {
         // position: absolute;
         height: 100vh;
         background-color: #fed317;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+            background-color: #000;
+            border-radius: 5px;
+            color: #fff;
+            border: none;
+            width: 160px;
+            height: 44px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        input {
+            width: 60%;
+            border-radius: 5px;
+            padding: 5px;
+            border: 1px solid gray;
+            margin-right: 5px;
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1200px;
+            padding: 0 4rem;
+            padding: 0 auto;
+            div {
+                width: 50%;
+            }
+        }
     }
     .comoFunciona {
         background-color: #e1e5ee;
