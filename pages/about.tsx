@@ -7,7 +7,7 @@ const About: NextPage = () => {
         <div className={styles.container}>
             <Header />
 
-            <h1>About</h1>
+            <h1 style={{ paddingTop: '200px' }}>About</h1>
         </div>
     )
 }

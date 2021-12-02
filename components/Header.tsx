@@ -22,12 +22,12 @@ const Header: NextPage = () => {
                     <ul>
                         <li className="nav-logo">
                             <a href="#home" onClick={handleClick} >
-                                <a>Festival</a>
+                                Festival
                             </a>
                         </li>
                         <li className="nav-item">
                             <a href="#comoFunciona" onClick={handleClick} >
-                                <a>¿Cómo funciona?</a>
+                                ¿Cómo funciona?
                             </a>
                         </li>
                         <li className="nav-item">Formatos <MdKeyboardArrowUp />
@@ -39,12 +39,12 @@ const Header: NextPage = () => {
                         </li>
                         <li className="nav-item">
                             <a href="#precios" onClick={handleClick} >
-                                <a>Precios</a>
+                                Precios
                             </a>
                         </li>
                         <li className="nav-item">
                             <a href="#socios" onClick={handleClick} >
-                                <a>Socios</a>
+                                Socios
                             </a>
                         </li>
                         <li className="nav-btn">
