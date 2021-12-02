@@ -43,22 +43,42 @@ const Home: NextPage = () => {
                                     1
                                 </div>
                                 <div>
-                                    {/* <p><span>Anuncios de alto impacto</span><br />Formatos creativos de gran impacto en los medios más importantes.</p> */}
+                                    <p>Anuncios de alto impacto<br /><span>Formatos creativos de gran impacto en los medios más importantes.</span></p>
                                 </div>
                             </div>
                             <div>
                                 <div>
                                     2
                                 </div>
-                                <div></div>
+                                <div>
+                                    <p>Encuentra a tu audiencia<br /><span>Usa nuestro segmentación para llegar a tu público objetivo.</span></p>
+                                </div>
                             </div>
                             <div>
                                 <div>
                                     3
                                 </div>
-                                <div></div>
+                                <div>
+                                    <p>Mide tus resultados<br /><span>Obtén feedback automatizado sobre la respuestas de tu audiencia.</span></p>
+                                </div>
                             </div>
                         </article>
+                    </div>
+                    <div className="alcance">
+                        <div>
+                            <p>Llega a más clientes con festivad.io</p>
+                            <p>Festivad ayuda a negocios de todos los tamaños a conectar con audiencias potenciales mientras consumen el contenido que aman. A través de nuestra plataforma  podrás mostrar anuncios de texto, imagen o video y formatos especiales a millones de personas en minutos.</p>
+                        </div>
+                        <div>
+                            <div>
+                                <p>10 M</p>
+                                <p>Más de <span>10 millones de personas</span> visitan y consumen los contenidosde nuestros socios todos los meses.</p>
+                            </div>
+                            <div>
+                                <p>55 %</p>
+                                <p>Más de la mitad de los usuarios a actuar publicidad no invasiva relacionada a sus contenidos de interés</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
