@@ -81,6 +81,38 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                 </div>
+
+                <div id="detalles">
+                    <section>
+                        <div>
+                            <img src="https://picsum.photos/300/300" />
+                        </div>
+                        <div>
+                            <p>Muéstrate al mundo sin importar tu presupuesto</p>
+                            <p>Sin subastas de espacios ni costos variables. Nuestros paquetes te permiten anunciar en todo el mundo desde $50.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            <img src="https://picsum.photos/300/300" />
+                        </div>
+                        <div>
+                            <p>Muéstrate al mundo sin importar tu presupuesto</p>
+                            <p>Sin subastas de espacios ni costos variables. Nuestros paquetes te permiten anunciar en todo el mundo desde $50.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            <img src="https://picsum.photos/300/300" />
+                        </div>
+                        <div>
+                            <p>Muéstrate al mundo sin importar tu presupuesto</p>
+                            <p>Sin subastas de espacios ni costos variables. Nuestros paquetes te permiten anunciar en todo el mundo desde $50.</p>
+                        </div>
+                    </section>
+                </div>
             </main>
 
             {/* <Footer /> */}
