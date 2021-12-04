@@ -1,10 +1,66 @@
 import type { NextPage } from 'next'
+import { HtmlProps } from 'next/dist/shared/lib/utils'
 import Head from 'next/head'
+import { MouseEvent, useState } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import styles from '../styles/Home.module.scss'
+import { IClass } from '../utils/interfaces'
 
 const Home: NextPage = () => {
+
+    const [classAcc, setClassAcc] = useState<IClass>({
+        primero: "",
+        segundo: "",
+        tercero: "",
+        cuarto: "",
+        quinto: "",
+        sexto: "",
+    });
+
+    const handleAccordionActive = (prop: MouseEvent) => {
+
+        const idSection = prop.currentTarget.id
+
+        switch (idSection) {
+            case "primero":
+                if (classAcc.primero.length === 0) {
+                    setClassAcc({ ...classAcc, [idSection]: "active" })
+                } else {
+                    setClassAcc({ ...classAcc, [idSection]: "" })
+                }
+                break;
+            case "segundo":
+                if (classAcc.segundo.length === 0) {
+                    setClassAcc({ ...classAcc, [idSection]: "active" })
+                } else {
+                    setClassAcc({ ...classAcc, [idSection]: "" })
+                }
+                break;
+            case "tercero":
+                if (classAcc.tercero.length === 0) {
+                    setClassAcc({ ...classAcc, [idSection]: "active" })
+                } else {
+                    setClassAcc({ ...classAcc, [idSection]: "" })
+                }
+                break;
+            case "cuarto":
+                if (classAcc.cuarto.length === 0) {
+                    setClassAcc({ ...classAcc, [idSection]: "active" })
+                } else {
+                    setClassAcc({ ...classAcc, [idSection]: "" })
+                }
+                break;
+            case "quinto":
+                if (classAcc.quinto.length === 0) {
+                    setClassAcc({ ...classAcc, [idSection]: "active" })
+                } else {
+                    setClassAcc({ ...classAcc, [idSection]: "" })
+                }
+                break;
+            default:
+                break;
+        }
+    }
 
     return (
         <div>
@@ -18,7 +74,7 @@ const Home: NextPage = () => {
 
             <main>
                 <div id="home">
-                    <section className="container">
+                    <section>
                         <div className="enunciados">
                             <p>Promociona tu marca <br />y consigue <span>más ventas</span></p>
                             <p>Anuncia en la red de portales de entretenimiento en <br />español con mayor audiencia de la región.</p>
@@ -67,7 +123,7 @@ const Home: NextPage = () => {
                     <div className="alcance">
                         <div>
                             <p>Llega a más clientes con festivad.io</p>
-                            <p>Festivad ayuda a negocios de todos los tamaños a conectar con audiencias potenciales mientras consumen el contenido que aman. A través de nuestra plataforma  podrás mostrar anuncios de texto, imagen o video y formatos especiales a millones de personas en minutos.</p>
+                            <p>Festivad ayuda a negocios de todos los tamaños a conectar con audiencias potenciales mientras consumen el contenido que aman.A través de nuestra plataforma  podrás mostrar anuncios de texto, imagen o video y formatos especiales a millones de personas en minutos.</p>
                         </div>
                         <div>
                             <div>
@@ -89,7 +145,17 @@ const Home: NextPage = () => {
                         </div>
                         <div>
                             <p>Muéstrate al mundo sin importar tu presupuesto</p>
-                            <p>Sin subastas de espacios ni costos variables. Nuestros paquetes te permiten anunciar en todo el mundo desde $50.</p>
+                            <p>Sin subastas de espacios ni costos variables.Nuestros paquetes te permiten anunciar en todo el mundo desde $50.</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div>
+                            <p>Los medios independientes más importantes de Latinoamérica</p>
+                            <p>Asocia tu marca al impacto de los espacios digitales que generan mayor confianza y conexión con sus comunidades.</p>
+                        </div>
+                        <div>
+                            <img src="https://picsum.photos/300/300" />
                         </div>
                     </section>
 
@@ -98,25 +164,62 @@ const Home: NextPage = () => {
                             <img src="https://picsum.photos/300/300" />
                         </div>
                         <div>
-                            <p>Muéstrate al mundo sin importar tu presupuesto</p>
-                            <p>Sin subastas de espacios ni costos variables. Nuestros paquetes te permiten anunciar en todo el mundo desde $50.</p>
+                            <p>Llega a la audiencia que realmente necesitas</p>
+                            <p>Pruebas nuestras opciones de segmentación basadas en intereses y datos demográficos.</p>
                         </div>
                     </section>
 
                     <section>
                         <div>
-                            <img src="https://picsum.photos/300/300" />
+                            <p>Dale un impulso a tu marca <br /> y muéstrala a millones de personas</p>
                         </div>
                         <div>
-                            <p>Muéstrate al mundo sin importar tu presupuesto</p>
-                            <p>Sin subastas de espacios ni costos variables. Nuestros paquetes te permiten anunciar en todo el mundo desde $50.</p>
+                            <button>Comienza ahora</button>
                         </div>
                     </section>
                 </div>
-            </main>
 
-            {/* <Footer /> */}
-        </div>
+                <div id="preguntas">
+                    <p>Preguntas frecuentes</p>
+                    <section className={classAcc.primero}>
+                        <div className="label" id="primero" onClick={handleAccordionActive}>¿Cuál es el monto mínimo para crear una campaña en PubliFácil?</div>
+                        <div className="content">
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+                    </section>
+
+                    <section className={classAcc.segundo}>
+                        <div className="label" id="segundo" onClick={handleAccordionActive}>¿Cuál es el monto mínimo para crear una campaña en PubliFácil?</div>
+                        <div className="content">
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+                    </section>
+
+                    <section className={classAcc.tercero}>
+                        <div className="label" id="tercero" onClick={handleAccordionActive}>¿Cuál es el monto mínimo para crear una campaña en PubliFácil?</div>
+                        <div className="content">
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+                    </section>
+
+                    <section className={classAcc.cuarto}>
+                        <div className="label" id="cuarto" onClick={handleAccordionActive}>¿Cuál es el monto mínimo para crear una campaña en PubliFácil?</div>
+                        <div className="content">
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+                    </section>
+
+                    <section className={classAcc.quinto}>
+                        <div className="label" id="quinto" onClick={handleAccordionActive}>¿Cuál es el monto mínimo para crear una campaña en PubliFácil?</div>
+                        <div className="content">
+                            <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        </div>
+                    </section>
+                </div>
+            </main >
+
+            <Footer />
+        </div >
     )
 }
 

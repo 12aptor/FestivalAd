@@ -4,8 +4,7 @@ const Footer = () => {
     }
     return (
         <footer>
-            <p>Holitas en el mar</p>
-            {renderName()}
+           
         </footer>
     )
 
