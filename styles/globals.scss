@@ -32,111 +32,117 @@ header {
         box-shadow: 0 4px 16px #e1e5ee;
         font-family: "Poppins", sans-serif;
         background: white;
-        ul {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-            .nav-logo {
-                font-size: 2.5rem;
-                margin-right: auto;
-                cursor: pointer;
-                transition: color 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > div {
+            width: 1200px;
+            ul {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 2rem;
+                list-style: none;
+                .nav-logo {
+                    font-size: 2.5rem;
+                    margin-right: auto;
+                    cursor: pointer;
+                    transition: color 0.2s;
 
-                &:hover,
-                &:focus {
-                    color: $primary-color;
-                    text-shadow: 0 0 3rem $primary-color;
-                }
-            }
-            .nav-item {
-                flex-shrink: 0;
-                flex-grow: 0;
-                font-weight: bold;
-                padding: 1.5rem 1.8rem;
-                position: relative;
-                cursor: pointer;
-                svg {
-                    position: absolute;
-                    right: 0;
-                    top: 40%;
-                    transition: transform 0.3s;
-                }
-
-                &:after {
-                    position: absolute;
-                    content: "";
-                    width: 0%;
-                    height: 0.4em;
-                    background: $primary-color;
-                    border-radius: 4px;
-                    bottom: 1em;
-                    left: 1.6em;
-                    transition: width 0.3s;
-                }
-                &:hover::after {
-                    width: 60%;
-                }
-                &:hover {
-                    ul {
-                        opacity: 1;
-                        visibility: visible;
+                    &:hover,
+                    &:focus {
+                        color: $primary-color;
+                        text-shadow: 0 0 3rem $primary-color;
                     }
+                }
+                .nav-item {
+                    flex-shrink: 0;
+                    flex-grow: 0;
+                    font-weight: bold;
+                    padding: 1.5rem 1.8rem;
+                    position: relative;
+                    cursor: pointer;
                     svg {
-                        transform: rotate(180deg);
+                        position: absolute;
+                        right: 0;
+                        top: 40%;
+                        transition: transform 0.3s;
                     }
-                }
 
-                .nav-drop {
-                    position: absolute;
-                    top: 4rem;
-                    box-shadow: 0 4px 16px $shadow-color;
-                    background-color: white;
-                    border-radius: 4px;
-                    border: 1px solid $shadow-color;
-                    width: 12rem;
-                    padding: 0.5rem;
-                    margin-left: -1rem;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 0.5rem;
-                    opacity: 0;
-                    visibility: hidden;
-                    transition: opacity 200ms ease-in-out;
-                    li {
-                        width: 100%;
-                        padding: 0.5rem 1rem;
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        width: 0%;
+                        height: 0.4em;
+                        background: $primary-color;
                         border-radius: 4px;
-                        cursor: pointer;
-                        transition: background 0.1s;
-                        &:hover,
-                        &:focus {
-                            background: $primary-color-light;
+                        bottom: 1em;
+                        left: 1.6em;
+                        transition: width 0.3s;
+                    }
+                    &:hover::after {
+                        width: 60%;
+                    }
+                    &:hover {
+                        ul {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                        svg {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .nav-drop {
+                        position: absolute;
+                        top: 4rem;
+                        box-shadow: 0 4px 16px $shadow-color;
+                        background-color: white;
+                        border-radius: 4px;
+                        border: 1px solid $shadow-color;
+                        width: 12rem;
+                        padding: 0.5rem;
+                        margin-left: -1rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 0.5rem;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: opacity 200ms ease-in-out;
+                        li {
+                            width: 100%;
+                            padding: 0.5rem 1rem;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            transition: background 0.1s;
+                            &:hover,
+                            &:focus {
+                                background: $primary-color-light;
+                            }
                         }
                     }
                 }
-            }
-            .nav-btn {
-                button {
-                    border: none;
-                    outline: transparent;
-                    padding: 0.5rem 1rem;
-                    border-radius: 0.5rem;
-                    background: lighten($primary-color, 25);
-                    color: darken($primary-color, 25);
-                    font-family: inherit;
-                    font-size: inherit;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: 0.1s;
-                    &:hover {
-                        background: lighten($primary-color, 15);
-                    }
-                    &:focus {
-                        text-shadow: 0 0 18px $primary-color;
-                        outline: 4px solid lighten($primary-color, 20);
+                .nav-btn {
+                    button {
+                        border: none;
+                        outline: transparent;
+                        padding: 0.5rem 1rem;
+                        border-radius: 0.5rem;
+                        background: lighten($primary-color, 25);
+                        color: darken($primary-color, 25);
+                        font-family: inherit;
+                        font-size: inherit;
+                        font-weight: bold;
+                        cursor: pointer;
+                        transition: 0.1s;
+                        &:hover {
+                            background: lighten($primary-color, 15);
+                        }
+                        &:focus {
+                            text-shadow: 0 0 18px $primary-color;
+                            outline: 4px solid lighten($primary-color, 20);
+                        }
                     }
                 }
             }

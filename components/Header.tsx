@@ -18,7 +18,7 @@ const Header: NextPage = () => {
     return (
         <header>
             <nav>
-                <div className="container">
+                <div>
                     <ul>
                         <li className="nav-logo">
                             <a href="#home" onClick={handleClick} >
