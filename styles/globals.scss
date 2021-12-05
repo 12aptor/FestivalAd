@@ -4,6 +4,7 @@ body {
     margin: 0;
     // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     //     Helvetica Neue, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -15,10 +16,23 @@ a {
     box-sizing: border-box;
 }
 
-$primary-color: hotpink;
+$primary-color: #FED317;;
 $primary-color-light: rgba($primary-color, 0.2);
 $shadow-color: #e1e5ee;
 $text-color: black;
+
+$breakpoints: (
+    sm : 540px,
+    md : 768px,
+    lg : 1024px,
+    xl : 1200px,
+);
+
+@mixin media-up($breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
 
 // @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
@@ -29,7 +43,7 @@ header {
         position: absolute;
         top: 0;
         width: 100%;
-        box-shadow: 0 4px 16px #e1e5ee;
+        // box-shadow: 0 4px 16px #e1e5ee;
         font-family: "Poppins", sans-serif;
         background: white;
         display: flex;
@@ -151,30 +165,40 @@ header {
 }
 
 main {
-    font-family: "Poppins", sans-serif;
-    #home {
+    // font-family: "Poppins", sans-serif;
+    #inicio {
         height: 100vh;
-        padding: 0 4rem;
-        background-color: #fed317;
+        min-height: 540px;
+        // padding: 0 4rem;
+        background-color: $primary-color;
         display: flex;
         align-items: center;
         justify-content: center;
+
         section {
             display: flex;
-            width: 1200px;
             margin: 0 auto;
-            div {
-                flex: 1;
-                border-radius: 2px solid green;
-                &:first-child {
-                    margin-right: 50px;
+            flex-direction: column-reverse;
+
+            .hero-img {
+                // order: 1;
+                margin: 0 auto;
+
+                img {
+                    width: auto;
+                    height: 263px;
                 }
             }
-            .enunciados {
+
+            .hero-title {
+                // order: 2;
+
                 p {
+                    text-align: center;
+
                     &:first-child {
-                        font-size: 45px;
-                        line-height: 67.5px;
+                        font-size: 26px;
+                        // line-height: 67.5px;
                         font-weight: 500;
                         margin-bottom: 0;
                         span {
@@ -182,14 +206,15 @@ main {
                         }
                     }
                     &:nth-child(2) {
-                        font-size: 18px;
+                        font-size: 14px;
                     }
                     &:nth-child(3) {
                         font-weight: 700;
-                        font-size: 15px;
+                        font-size: 14px;
                     }
                 }
-                .registro {
+
+                .register {
                     display: flex;
                     font-size: 15px;
                     input {
@@ -212,7 +237,131 @@ main {
                 }
             }
         }
+
+        @include media-up(md) {
+            section {
+                min-width: 700px;
+                height: auto;
+                padding: 0 30px;
+
+                .hero-title {
+                    p {
+                        text-align: center;
+
+                        &:first-child {
+                            font-size: 42px;
+                            font-weight: 500;
+                            margin-bottom: 0;
+                            span {
+                                font-weight: 700;
+                            }
+                        }
+                        &:nth-child(2) {
+                            font-size: 18px;
+                        }
+                        &:nth-child(3) {
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+
+                .hero-img {
+
+                    img {
+                        width: 620px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        @include media-up(lg) {
+            section {
+                flex-direction: row;
+                min-width: 1000px;
+                padding: 0 30px;
+
+                div {
+                    width: 50%;
+                }
+
+                .hero-title {
+                    p {
+                        text-align: left;
+
+                        &:first-child {
+                            font-size: 36px;
+                            // line-height: 67.5px;
+                            font-weight: 500;
+                            margin-bottom: 0;
+                            span {
+                                font-weight: 700;
+                            }
+                        }
+                        &:nth-child(2) {
+                            font-size: 17px;
+                        }
+                        &:nth-child(3) {
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+
+                .hero-img {
+
+                    img {
+                        width: 490px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        @include media-up(xl) {
+            section {
+                width: 1200px;
+                
+                .hero-title {
+
+                    p {
+
+                        &:first-child {
+                            font-size: 44px;
+                            // line-height: 67.5px;
+                            font-weight: 500;
+                            margin-bottom: 0;
+                            span {
+                                font-weight: 700;
+                            }
+                        }
+                        &:nth-child(2) {
+                            font-size: 18px;
+                        }
+                        &:nth-child(3) {
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+                    }
+
+                }
+
+                .hero-img {
+
+                    img {
+                        width: 620px;
+                        height: auto;
+                    }
+                }
+
+            }
+        }
+
     }
+
     #alcance {
         height: 100vh;
         background-color: #fff;
@@ -459,11 +608,102 @@ main {
 }
 
 footer {
-    height: 400px;
     width: 100%;
+    height: auto;
     background-color: #000;
+    color: #FFF;
+    font-size: 14px;
+    padding: 50px 0;
+    text-align: center;
 
-    @media (max-width: 1200px) {
-        background-color: plum;
+    .footer__container {
+        min-width: 320px;
+        margin: 30px auto;
+
+        .footer__logo {
+            margin-bottom: 70px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .footer__nav {
+
+            .footer__section {
+                text-align: center;
+                margin-bottom: 50px;
+                font-weight: 500;
+    
+                h5 {
+                    margin-bottom: 15px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+            
+                li {
+                    display: block;
+                    margin-bottom: 10px;
+                }
+            }
+    
+        }
+
     }
+
+    span {
+        display: block;
+        width: 100%;
+        font-size: 13px;
+        color: rgb(124, 122, 122);
+    }
+
+    @include media-up(md){
+        .footer__container {
+            min-width: 700px;
+
+            .footer__nav {
+                display: flex;
+
+                .footer__section {
+                    width: 33.3%;
+                }
+            }
+        }
+    }
+
+    @include media-up(lg) {
+        .footer__container {
+            display: flex;
+            justify-content: flex-end;
+            min-width: 1000px;
+            padding: 0 50px 0 50px;
+            
+            .footer__logo {
+                width: 40%;
+                text-align: left;
+                display: flex;
+                align-items: center;
+            }
+
+            .footer__nav {
+                width: 60%;
+
+                .footer__section {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    @include media-up(xl) {
+        .footer__container {
+            width: 1200px;
+        }
+    }
+
+
 }

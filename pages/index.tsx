@@ -73,19 +73,19 @@ const Home: NextPage = () => {
             <Header />
 
             <main>
-                <div id="home">
+                <div id="inicio">
                     <section>
-                        <div className="enunciados">
+                        <div className="hero-title">
                             <p>Promociona tu marca <br />y consigue <span>más ventas</span></p>
-                            <p>Anuncia en la red de portales de entretenimiento en <br />español con mayor audiencia de la región.</p>
+                            <p>Anuncia en la red de portales de entretenimiento en <br />con mayor audiencia de Latinoamérica y España.</p>
                             <p>Regístrate y empieza a anunciar</p>
-                            <div className="registro">
+                            <div className="register">
                                 <input type="text" placeholder="Correo electrónico" />
                                 <button>Comienza ahora</button>
                             </div>
                         </div>
-                        <div>
-                            <img src="https://picsum.photos/400/300" />
+                        <div className="hero-img">
+                            <img src="./hero-image.png" />
                         </div>
                     </section>
                 </div>

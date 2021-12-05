@@ -22,7 +22,7 @@ const Header: NextPage = () => {
                     <ul>
                         <li className="nav-logo">
                             <a href="#home" onClick={handleClick} >
-                                Festival
+                                <img src="../logo.svg" />
                             </a>
                         </li>
                         <li className="nav-item">
