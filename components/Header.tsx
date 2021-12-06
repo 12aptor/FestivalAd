@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { MdKeyboardArrowUp } from 'react-icons/md'
+import { IoMenu } from 'react-icons/io5'
 
 const Header: NextPage = () => {
 
@@ -20,10 +21,14 @@ const Header: NextPage = () => {
             <nav>
                 <div>
                     <ul>
+                        <input type="checkbox" id="burger-toggle" />
                         <li className="nav-logo">
                             <a href="#home" onClick={handleClick} >
                                 <img src="../logo.svg" />
                             </a>
+                            <label htmlFor="burger-toggle" id="burger-btn">
+                                <IoMenu />
+                            </label>
                         </li>
                         <li className="nav-item">
                             <a href="#comoFunciona" onClick={handleClick} >

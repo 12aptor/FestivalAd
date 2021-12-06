@@ -16,16 +16,16 @@ a {
     box-sizing: border-box;
 }
 
-$primary-color: #FED317;;
+$primary-color: #fed317;
 $primary-color-light: rgba($primary-color, 0.2);
 $shadow-color: #e1e5ee;
 $text-color: black;
 
 $breakpoints: (
-    sm : 540px,
-    md : 768px,
-    lg : 1024px,
-    xl : 1200px,
+    sm: 540px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1200px,
 );
 
 @mixin media-up($breakpoint) {
@@ -40,11 +40,12 @@ $breakpoints: (
 
 header {
     nav {
-        position: absolute;
+        position: relative;
         top: 0;
+        right: 0;
         width: 100%;
-        // box-shadow: 0 4px 16px #e1e5ee;
-        font-family: "Poppins", sans-serif;
+        height: 85px;
+        padding: 0 3rem;
         background: white;
         display: flex;
         align-items: center;
@@ -53,10 +54,14 @@ header {
             width: 1200px;
             ul {
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
-                gap: 2rem;
+                margin: 0;
+                padding: 0;
                 list-style: none;
+                #burger-toggle {
+                    display: none;
+                }
                 .nav-logo {
                     font-size: 2.5rem;
                     margin-right: auto;
@@ -67,6 +72,10 @@ header {
                     &:focus {
                         color: $primary-color;
                         text-shadow: 0 0 3rem $primary-color;
+                    }
+                    #burger-btn {
+                        display: none;
+                        cursor: pointer;
                     }
                 }
                 .nav-item {
@@ -124,6 +133,7 @@ header {
                         opacity: 0;
                         visibility: hidden;
                         transition: opacity 200ms ease-in-out;
+                        z-index: 10;
                         li {
                             width: 100%;
                             padding: 0.5rem 1rem;
@@ -161,15 +171,43 @@ header {
                 }
             }
         }
+
+        @media (max-width: 1200px) {
+            min-height: 85px;
+            height: 100%;
+            & > div {
+                #burger-toggle:checked ~ .nav-item {
+                    display: inline;
+                }
+                #burger-toggle:checked ~ .nav-btn {
+                    display: inline;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                    .nav-logo {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        #burger-btn {
+                            display: inline;
+                        }
+                    }
+                    .nav-item,
+                    .nav-btn {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
 
 main {
-    // font-family: "Poppins", sans-serif;
     #inicio {
         height: 100vh;
-        min-height: 540px;
-        // padding: 0 4rem;
+        padding: 0 3rem;
         background-color: $primary-color;
         display: flex;
         align-items: center;
@@ -177,7 +215,7 @@ main {
 
         section {
             display: flex;
-            margin: 0 auto;
+            // margin: 0 auto;
             flex-direction: column-reverse;
 
             .hero-img {
@@ -264,13 +302,11 @@ main {
                             font-size: 14px;
                         }
                     }
-
                 }
 
                 .hero-img {
-
                     img {
-                        width: 620px;
+                        width: 600px;
                         height: auto;
                     }
                 }
@@ -308,11 +344,9 @@ main {
                             font-size: 14px;
                         }
                     }
-
                 }
 
                 .hero-img {
-
                     img {
                         width: 490px;
                         height: auto;
@@ -324,11 +358,9 @@ main {
         @include media-up(xl) {
             section {
                 width: 1200px;
-                
+
                 .hero-title {
-
                     p {
-
                         &:first-child {
                             font-size: 44px;
                             // line-height: 67.5px;
@@ -346,20 +378,16 @@ main {
                             font-size: 14px;
                         }
                     }
-
                 }
 
                 .hero-img {
-
                     img {
-                        width: 620px;
+                        width: 600px;
                         height: auto;
                     }
                 }
-
             }
         }
-
     }
 
     #alcance {
@@ -611,7 +639,7 @@ footer {
     width: 100%;
     height: auto;
     background-color: #000;
-    color: #FFF;
+    color: #fff;
     font-size: 14px;
     padding: 50px 0;
     text-align: center;
@@ -627,12 +655,11 @@ footer {
         }
 
         .footer__nav {
-
             .footer__section {
                 text-align: center;
                 margin-bottom: 50px;
                 font-weight: 500;
-    
+
                 h5 {
                     margin-bottom: 15px;
                     font-weight: 400;
@@ -643,15 +670,13 @@ footer {
                     list-style: none;
                     padding: 0;
                 }
-            
+
                 li {
                     display: block;
                     margin-bottom: 10px;
                 }
             }
-    
         }
-
     }
 
     span {
@@ -661,7 +686,7 @@ footer {
         color: rgb(124, 122, 122);
     }
 
-    @include media-up(md){
+    @include media-up(md) {
         .footer__container {
             min-width: 700px;
 
@@ -681,7 +706,7 @@ footer {
             justify-content: flex-end;
             min-width: 1000px;
             padding: 0 50px 0 50px;
-            
+
             .footer__logo {
                 width: 40%;
                 text-align: left;
@@ -704,6 +729,4 @@ footer {
             width: 1200px;
         }
     }
-
-
 }
